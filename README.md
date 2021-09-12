@@ -1,7 +1,7 @@
 # JavaScript_projectInJuno
 This project is re uploaded on Sep 12, 2021 because my misusing git and my repository did not work properly.  
 When I figured out how to fix it, I alreayd empty and reset this document. The cost of learning...    
-My break timer is built during the second half of Aug (due on Aug 29) then I started working on my second project in Juno JavaScript course.  
+My break timer is built during the second half of Aug (due on Aug 29) then I started working on my second project in Juno JavaScript course, it is about APIs.  
 After some brainstorms and idea changes, I am building my weather network from this weekend.  
   
 ____________________________________________________________________________________________________________________________________________  
