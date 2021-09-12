@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUHUI'S BREAK TIMER</title>
+    <!-- Add icon before tittle -->
+    <link rel="tittle icon" href="./image/titlelogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--  font-family: 'Patrick Hand', cursive;  -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div class="headerLeftSide">
+            <p class="headerLeftSideContent">YUHUI'S BREAK TIMER</p>
+        </div>
+        <div class="headerRightSide">
+            <div class="themeChanging">
+                <button class="themeLogo">Theme</button>
+                <div class="themeDropdown">
+                    <ul>
+                        <li class="greenTheme"><button ><span class="greenThemeSpan"></span><span class="greenThemeText">Green Ash</span></button></li>
+                        <!-- HEX: #A0DAA9 -->
+                        <li class="blueTheme"><button><span class="blueThemeSpan"></span><span class="blueThemeText">Serenity</span></button></li>
+                        <!-- Hex #b3cee5 -->
+                        <li class="pinkTheme"><button><span class="pinkThemeSpan">⇒</span><span class="pinkThemeText">Rose Quartz</span></button></li>
+                        <!-- Hex #F7CAC9 -->
+                    </ul>
+                </div>
+            </div>
+            <div class="languageChanging">
+                <button class="languageButton">Language</button>
+                <div class="languageDropdown">
+                    <ul>
+                        <li class="englishLanguage"><button>English<span class="englishIconSpan">⇐</span></button></li>
+                        <li class="chineseLanguage"><button>简体中文<span class="chineseIconSpan"></span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="quickAccessButton">
+                <button class="lunchTime">Lunch Time</button>
+                <button class="workBreak">Work Break</button>
+                <button class="coffeeTime">Coffee Time</button>
+                <button class="pomodoro">Pomodoro</button>
+            </div>
+            <div class="timeScreen">
+                <p class="mins" id="minsTens">0</p><p class="mins" id="minsOnes">0</p>
+                <P class="betweenminsandsecs">:</P>
+                <P class="seconds" id="secondsTens">0</p><p class="seconds" id="secondsOnes">0</P>
+            </div>
+            <div class="startAndClearup">
+                <button class="startButton">Start</button>
+                <button class="clearupButton">Reset</button>
+            </div>
+            <div class="timeSettingButton">
+                <button class="reduceTime" id="reduceMinute">Reduce a minute</button>
+                <button class="reduceTime" id="reduceSecond">Reduce a second</button>
+                <button class="addTime" id="addSecond">Add a second</button>
+                <button class="addTime" id="addMinute">Add a minute</button>
+            </div>
+        </section>
+        <form class="inputTime">
+            <div class="timeType">
+                <div>
+                    <p class="timeTypeExplanation">Please Enter The Time Of:</p>
+                </div>
+                <div>
+                    <label class="forCountdownTime" for="countdowmTime">Countdown(min:sec)</label>
+                    <input type="radio" style="vertical-align:middle;" name="timeInputType" value="countdowmTime"
+                        id="countdowmTime" checked>
+
+                    <label class="forAlarmTime" for="alarmTime">Be-back(hr:min)</label>
+                    <input type="radio" style="vertical-align:middle;" name="timeInputType" value="alarmTime"
+                        id="alarmTime">
+                </div>
+            </div>
+            <input type="text" style="vertical-align:middle;" name="inputMinute" placeholder="00" id="inputMinute"
+                maxlength="2" minlength="2" aria-describedby="inputTheNumberOfCountdownMinutes">
+            <div class="colonSpace">
+                <p>:</p>
+            </div>
+            <input type="text" name="inputSecond" placeholder="00" id="inputSecond" maxlength="2" minlength="2"
+                aria-describedby="inputTheNumberOfCountdownSeconds">
+            <input class="forSubmit" type="submit" value="Submit!">
+        </form>
+        <section class="logSection">
+            <div class="eventLog">
+
+            </div>
+            <div class="cleanLogDiv">
+            <button class="cleanLog">Log Clean Up!</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <a href="https://junocollege.com/"><p class="footerCreated">Created at JUNO College of Technology</p></a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
