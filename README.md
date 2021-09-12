@@ -12,4 +12,4 @@ I set shortcut buttons for lunch time, work break, coffee time, pomodoro, plus/r
 All acts on my app will be logged and they can be marked as important marks.  
 Three themes could be selected while two languages are provided.  
 Please feel free to share with me if you have any idea about improving the practicability of this break timer :).  
-
+____________________________________________________________________________________________________________________________________________   
