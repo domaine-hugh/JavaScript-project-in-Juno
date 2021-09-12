@@ -2,7 +2,7 @@
 This project is re uploaded on Sep 12, 2021 because my misusing git and my repository did not work properly.  
 When I figured out how to fix it, I alreayd empty and reset this document. The cost of learning...    
 My break timer is built during the second half of Aug (due on Aug 29) then I started working on my second project in Juno JavaScript course, it is about APIs.  
-After some brainstorms and idea changes, I am building my weather network from this weekend.  
+After some brainstorms and idea changes (pokedex, hearthstone pack openning simulator, weather recipe... I may build them later), I am building my weather network since I am trying to combine three APIs working together.  
   
 ____________________________________________________________________________________________________________________________________________  
 YUHUI'S BREAK TIMER  
