@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUHUI'S WEATHER NETWORK</title>
+    <link href="./style.css" rel="stylesheet">
+    <!-- Concert One -->
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <div class="subscriptMe">
+            <a href="https://twitter.com/Hugh_Zhou_"><img src="./image/twitter-logo.png" height="50px"></a>
+            <a href="https://github.com/Hughzhoutrt"><img src="./image/github_logo_icon.png" height="50px"></a>
+            <a href="https://www.linkedin.com/in/hugh-yuhui-zhou-47181b170/"><img src="./image/linkedin_logo_icon.png" height="50px"></a>
+        </div>
+        <div>
+            <h1>YUHUI'S WEATHER NETWORK</h1>
+        </div>
+    </header>
+    <main>
+        <section class="locationInputSection">
+            <p>Your current city is: <span class="currentCityName"></span></p>
+            <form class="locationInputForm" name="locationInputForm">
+                <div>
+                    <p>You also can check the weather of another city: </p>
+                </div>
+                <label for="cityNameInput">City Name:</label>
+                <input type="text" id="cityNameInput" name="cityNameInput" required placeholder="Toronto">
+                <label for="countryNameInput">Country Name (abbr):</label>
+                <input type="text" id="countryNameInput" name="countryNameInput" required placeholder="CA">
+                <input type="submit">
+            </form>
+        </section>
+        <sectiom class="weatherDataDisplaySection">
+            <div class="weatherInformation">
+                <div class="weatherIconDiv">
+
+                </div>
+                <div class="temperatureNumberDisplayDiv">
+                    <div>
+                        <div>
+                            <p class="currentTempertureNumber"></p>
+                        </div>
+                        <div>
+                            <button id="centigradeSign">°C</button><p>|</p><button id="fahrenheitSign">°F</button>
+                        </div>
+                    </div>
+                    <p>Feels like <span class="currentFeelsLikeTemperatureNumber"></span><span class="currentFeelsLikeTemperatureSign">°C</span></p>
+                </div>
+                <div class="otherNumberDisplayDiv">
+                    <p>Humidity: <span class="humidityDisplay"></span></p>
+                    <p>Pressure: <span class="pressureDisplay"></span></p>
+                    <p>Wind: <span class="windDisplay"></span></p>
+                </div>
+            </div>
+            <div class="cityInformation">
+                <p class="currentCityName"></p>
+                <p class="currentTimeDisplay"></p>
+                <p class="currentWeatherDescriptionDisplay"></p>
+            </div>
+            <div>
+                <button class="savingWeatherDataButton">Save the weather data</button>
+            </div>
+            <div class="savingWeatherDataDisplay">
+
+            </div>
+        </sectiom>
+        <section class="gifSection">
+            <p>Please enjoy the gif related with today's weather!</p>
+            <div class="gifDisplayDiv">
+
+            </div>
+        </section>
+        <footer>
+            <div>
+                <a href="https://junocollege.com/"><p class="footerCreated">Created at JUNO College of Technology</p></a>
+            </div>
+        </footer>
+
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
