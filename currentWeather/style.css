@@ -16,6 +16,7 @@ body {
     background-attachment: fixed;
     margin: 0 auto;
     width:1200px;
+    color:#282D3C;
     font-family: 'Concert One', cursive;
 }
 
@@ -28,6 +29,7 @@ body {
 }
 
 /* Page body settings end */
+/* Header settings start */
 .subscriptMe {
     background-color:#EFE1CE;
     padding:10px;
@@ -37,6 +39,7 @@ body {
 
 .subscriptMe a {
     padding: 0 5px;
+    margin-left: 20px;
 }
 
 #headerTextArea {
@@ -70,6 +73,71 @@ body {
     background-image: url(./image/cloudyTitleBackground.gif);
 }
 
+h1 {
+    font-size: 50px;
+}
+
+h1::before {
+    content:'';
+    background-image: url(./image/header-logo.png);
+    display: inline-block;
+    background-size: 100%;
+    width:50px;
+    height:50px;
+    margin-right: 10px;
+}
+/* Header settings end */
+/* Main body settings start */
 main {
     background-color: rgba( 224,181,137, 0.9);
+    padding: 20px 20px;
 }
+
+/* Location input section settings start */
+.locationInputSection p {
+    font-size: 20px;
+}
+
+.formWrap {
+    display: flex;
+    justify-content: space-between;
+}
+.currentCityName {
+    font-size: 30px;
+}
+
+.locationInputForm {
+    display:flex;
+}
+
+#cityNameInput {
+    align-self: center;
+    height: 30px;
+    width:150px;
+    margin: 0 10px;
+}
+
+#countryNameInput {
+    align-self: center;
+    height: 30px;
+    width:70px;
+    margin-right: 10px;
+}
+
+form input[type="submit"] {
+    margin-right: 10px;
+}
+
+form input[type="submit"],
+.locationInputSection button {
+    align-self: center;
+    border-radius: 0;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Concert One', cursive;
+    background-color:#EFE1CE;
+}
+
+
+/* Main body settings end */

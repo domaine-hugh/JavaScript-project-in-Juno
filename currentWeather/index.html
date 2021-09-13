@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YUHUI'S WEATHER NETWORK</title>
+    <!-- Add icon before tittle -->
+    <link rel="tittle icon" href="./image/page-tittle-logo.png">
     <link href="./style.css" rel="stylesheet">
     <!-- Concert One -->
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet"> 
@@ -23,16 +25,19 @@
     <main>
         <section class="locationInputSection">
             <p>Your current city is: <span class="currentCityName"></span></p>
-            <form class="locationInputForm" name="locationInputForm">
-                <div>
-                    <p>You also can check the weather of another city: </p>
-                </div>
-                <label for="cityNameInput">City Name:</label>
-                <input type="text" id="cityNameInput" name="cityNameInput" required placeholder="Toronto">
-                <label for="countryNameInput">Country Name (abbr):</label>
-                <input type="text" id="countryNameInput" name="countryNameInput" required placeholder="CA">
-                <input type="submit">
-            </form>
+            <div class="formWrap">
+                <form class="locationInputForm" name="locationInputForm">
+                    <div>
+                        <p>You can also check for another city: </p>
+                    </div>
+                    <label for="cityNameInput" class="sr-only">City Name:</label>
+                    <input type="text" id="cityNameInput" name="cityNameInput" required placeholder="e.g., Toronto">
+                    <label for="countryNameInput" class="sr-only">Country Name by abbreviation:</label>
+                    <input type="text" id="countryNameInput" name="countryNameInput" required placeholder="e.g., CA">
+                    <input type="submit" value="Check The Weather!">
+                </form>
+                <button>Internationalized Domain Name</button>
+            </div>
         </section>
         <sectiom class="weatherDataDisplaySection">
             <div class="weatherInformation">
