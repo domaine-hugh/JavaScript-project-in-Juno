@@ -9,6 +9,7 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 /* Page body settings start */
 body {
+    background-color: rgba( 224,181,137, 0.9);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -19,12 +20,13 @@ body {
 }
 
 .dayTimeWallPaper {
-    background-image: url(image/daytimewallpaper.jpg);
+    background-image: url(./image/daytimewallpaper.jpg);
 }
 
 .nightTimeWallPaper {
-    background-image: url(image/nighttimewallpaper.jpg);
+    background-image: url(./image/nighttimewallpaper.jpg);
 }
+
 /* Page body settings end */
 .subscriptMe {
     background-color:#EFE1CE;
@@ -38,6 +40,7 @@ body {
 }
 
 #headerTextArea {
+    background-color: rgba( 224,181,137, 0.9);
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -65,10 +68,6 @@ body {
 
 .cloudySkyTittleTextArea {
     background-image: url(./image/cloudyTitleBackground.gif);
-}
-
-.undefinedTittleTextArea {
-    background-color: rgba( 224,181,137, 0.9);
 }
 
 main {

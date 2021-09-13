@@ -20,6 +20,10 @@ app.currentWeatherPressue = '';
 
 app.temperatureUnitIsCentigradeListner = true; //Centigrade default
 
+app.weatherInputWrongSituation = 0;
+app.lastOneCityName = "";
+app.lastOneCountryName = "";
+
 app.gifKey = `qqanPZz7sLSn7kVSm7oDDrm4Az3ZQ1XH`;
 app.gifBaseUrl = `http://api.giphy.com/v1/gifs/search`;
 
@@ -78,23 +82,35 @@ app.getCurrentWeather = () => {
         }
     }).then(function (result) { //Saving weather data
         console.log(result);
-        app.currentWeaterCode = result.data[0].weather.code;
-        app.currentWeatherDescription = result.data[0].weather.description;
-        app.currentWeatherTime = result.data[0].datetime;
-        app.currentWeatherDayNight = result.data[0].pod;
-        app.currentWeatherFeelsLike = result.data[0].app_temp;
-        app.currentWeatherTemperature = result.data[0].temp;
-        app.currentWeatherWindSpeed = result.data[0].wind_spd;
-        app.currentWeatherWindDirection = result.data[0].wind_cdir_full;
-        //Wind direction use first letter upper case
-        const currentWeatherWindDirectionFirstLetterUpperCase = app.currentWeatherWindDirection;
-        app.currentWeatherWindDirection = currentWeatherWindDirectionFirstLetterUpperCase[0].toUpperCase() + currentWeatherWindDirectionFirstLetterUpperCase.substr(1);
-        app.currentWeathterHumidity = result.data[0].rh;
-        app.currentWeatherPressue = result.data[0].pres;
-        app.weatherDataDisplay(app.currentWeatherTemperature, app.currentWeatherFeelsLike, app.currentWeathterHumidity, app.currentWeatherPressue, app.currentWeatherWindSpeed, app.currentWeatherWindDirection);
-        app.getWeatherGif(app.currentWeatherDescription); //Put current weather description into GIF API to get GIF
-        app.currentTimeWallPaper(); //Change wall paper
-        app.currentTimeTittleBackground(); //Change header tittle gif background
+        if (result === undefined) {
+            //If user input invalid city name, alert shows and let page go back to show the last city data
+            alert(`Please enter a corret city name and a country abbreviation!`);
+            app.weatherCity = app.lastOneCityName;
+            app.weatherCountry = app.lastOneCountryName;
+            app.locationDataDisplay(app.weatherCity, app.weatherCountry);
+            app.getCurrentWeather();
+        } else {
+            app.currentWeaterCode = result.data[0].weather.code;
+            app.currentWeatherDescription = result.data[0].weather.description;
+            app.currentWeatherTime = result.data[0].datetime;
+            app.currentWeatherDayNight = result.data[0].pod;
+            app.currentWeatherFeelsLike = result.data[0].app_temp;
+            app.currentWeatherTemperature = result.data[0].temp;
+            app.currentWeatherWindSpeed = result.data[0].wind_spd;
+            app.currentWeatherWindDirection = result.data[0].wind_cdir_full;
+            //Wind direction use first letter upper case
+            const currentWeatherWindDirectionFirstLetterUpperCase = app.currentWeatherWindDirection;
+            app.currentWeatherWindDirection = currentWeatherWindDirectionFirstLetterUpperCase[0].toUpperCase() + currentWeatherWindDirectionFirstLetterUpperCase.substr(1);
+            app.currentWeathterHumidity = result.data[0].rh;
+            app.currentWeatherPressue = result.data[0].pres;
+            app.weatherDataDisplay(app.currentWeatherTemperature, app.currentWeatherFeelsLike, app.currentWeathterHumidity, app.currentWeatherPressue, app.currentWeatherWindSpeed, app.currentWeatherWindDirection);
+            app.getWeatherGif(app.currentWeatherDescription); //Put current weather description into GIF API to get GIF
+            app.currentTimeWallPaper(); //Change wall paper
+            app.currentTimeTittleBackground(); //Change header tittle gif background
+            // Restore the city data and use it if use input invalid city info
+            app.lastOneCityName = app.weatherCity;
+            app.lastOneCountryName = app.weatherCountry;
+        };
     })
 };
 
@@ -157,7 +173,7 @@ app.currentTimeWallPaper = () => {
         $('body').toggleClass('dayTimeWallPaper')
     } else if (app.currentWeatherDayNight === 'n') {
         $('body').toggleClass('nightTimeWallPaper')
-    }
+    };
 };
 
 app.currentTimeTittleBackground = () => {
@@ -169,12 +185,10 @@ app.currentTimeTittleBackground = () => {
         $('#headerTextArea').toggleClass('snowingTittleTextArea');
     } else if (app.currentWeaterCode === 700 || app.currentWeaterCode === 711 || app.currentWeaterCode === 721 || app.currentWeaterCode === 731 || app.currentWeaterCode === 741 || app.currentWeaterCode === 751) { //Fogging day tittle background gif
         $('#headerTextArea').toggleClass('foggingTittleTextArea');
-    } else if (app.currentWeaterCode === 800 ) { //Sunny day tittle background gif
+    } else if (app.currentWeaterCode === 800) { //Sunny day tittle background gif
         $('#headerTextArea').toggleClass('clearSkyTittleTextArea');
     } else if (app.currentWeaterCode === 801 || app.currentWeaterCode === 802 || app.currentWeaterCode === 803 || app.currentWeaterCode === 804) { //Cloudy day tittle background gif
-        $('#headerTextArea').toggleClass('cloudySkyTittleTextArea'); 
-    } else {
-        $('#headerTextArea').toggleClass('undefinedTittleTextArea'); 
+        $('#headerTextArea').toggleClass('cloudySkyTittleTextArea');
     };
 };
 
