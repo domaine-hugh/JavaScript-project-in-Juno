@@ -94,6 +94,7 @@ app.getCurrentWeather = () => {
         app.weatherDataDisplay(app.currentWeatherTemperature, app.currentWeatherFeelsLike, app.currentWeathterHumidity, app.currentWeatherPressue, app.currentWeatherWindSpeed, app.currentWeatherWindDirection);
         app.getWeatherGif(app.currentWeatherDescription); //Put current weather description into GIF API to get GIF
         app.currentTimeWallPaper(); //Change wall paper
+        app.currentTimeTittleBackground(); //Change header tittle gif background
     })
 };
 
@@ -159,6 +160,25 @@ app.currentTimeWallPaper = () => {
     }
 };
 
+app.currentTimeTittleBackground = () => {
+    if (app.currentWeaterCode === 200 || app.currentWeaterCode === 201 || app.currentWeaterCode === 202 || app.currentWeaterCode === 230 || app.currentWeaterCode === 231 || app.currentWeaterCode === 232 || app.currentWeaterCode === 233) { //Thunder day tittle background gif
+        $('#headerTextArea').toggleClass('thunerTittleTextArea');
+    } else if (app.currentWeaterCode === 300 || app.currentWeaterCode === 301 || app.currentWeaterCode === 302 || app.currentWeaterCode === 500 || app.currentWeaterCode === 501 || app.currentWeaterCode === 502 || app.currentWeaterCode === 511 || app.currentWeaterCode === 520 || app.currentWeaterCode === 521 || app.currentWeaterCode === 522) { //Raining day tittle background gif
+        $('#headerTextArea').toggleClass('rainingTittleTextArea');
+    } else if (app.currentWeaterCode === 600 || app.currentWeaterCode === 601 || app.currentWeaterCode === 602 || app.currentWeaterCode === 610 || app.currentWeaterCode === 611 || app.currentWeaterCode === 612 || app.currentWeaterCode === 621 || app.currentWeaterCode === 622 || app.currentWeaterCode === 623) { //Snowing day tittle background gif
+        $('#headerTextArea').toggleClass('snowingTittleTextArea');
+    } else if (app.currentWeaterCode === 700 || app.currentWeaterCode === 711 || app.currentWeaterCode === 721 || app.currentWeaterCode === 731 || app.currentWeaterCode === 741 || app.currentWeaterCode === 751) { //Fogging day tittle background gif
+        $('#headerTextArea').toggleClass('foggingTittleTextArea');
+    } else if (app.currentWeaterCode === 800 ) { //Sunny day tittle background gif
+        $('#headerTextArea').toggleClass('clearSkyTittleTextArea');
+    } else if (app.currentWeaterCode === 801 || app.currentWeaterCode === 802 || app.currentWeaterCode === 803 || app.currentWeaterCode === 804) { //Cloudy day tittle background gif
+        $('#headerTextArea').toggleClass('cloudySkyTittleTextArea'); 
+    } else {
+        $('#headerTextArea').toggleClass('undefinedTittleTextArea'); 
+    };
+};
+
+
 app.init = () => {
     app.getCurrentLocationWeather();
 
@@ -180,6 +200,7 @@ $(() => {
         app.locationDataDisplay(app.weatherCity, app.weatherCountry);
         app.getCurrentWeather();
         app.currentTimeWallPaper(); //Change wall paper
+        app.currentTimeTittleBackground(); //Change header tittle gif background
     });
 
     $('#centigradeSign').click(function (event) { //Transfer to Centigrade

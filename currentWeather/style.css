@@ -26,3 +26,51 @@ body {
     background-image: url(image/nighttimewallpaper.jpg);
 }
 /* Page body settings end */
+.subscriptMe {
+    background-color:#EFE1CE;
+    padding:10px;
+    display:flex;
+    justify-content: end;
+}
+
+.subscriptMe a {
+    padding: 0 5px;
+}
+
+#headerTextArea {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.thunerTittleTextArea {
+    background-image: url(./image/thunderRainingTitleBackground.gif);
+}
+
+.rainingTittleTextArea {
+    background-image: url(./image/rainingTitleBackground.gif);
+}
+
+.snowingTittleTextArea {
+    background-image: url(./image/snowingTitleBackground.gif);
+}
+
+.foggingTittleTextArea {
+    background-image: url(./image/fogTitleBackground.gif);
+}
+
+.clearSkyTittleTextArea {
+    background-image: url(./image/clearSkyTitleBackground.gif);
+}
+
+.cloudySkyTittleTextArea {
+    background-image: url(./image/cloudyTitleBackground.gif);
+}
+
+.undefinedTittleTextArea {
+    background-color: rgba( 224,181,137, 0.9);
+}
+
+main {
+    background-color: rgba( 224,181,137, 0.9);
+}
