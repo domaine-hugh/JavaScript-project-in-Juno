@@ -93,7 +93,13 @@ app.getCurrentWeather = () => {
             app.currentWeatherDescription = result.data[0].weather.description;
             app.currentWeatherDayNight = result.data[0].pod;
             app.currentWeatherFeelsLike = result.data[0].app_temp;
+            //Keep one decimal place
+            const weatherFeelsLikeTemperatureInTransfer = app.currentWeatherFeelsLike.toFixed(1);
+            app.currentWeatherFeelsLike = weatherFeelsLikeTemperatureInTransfer;
             app.currentWeatherTemperature = result.data[0].temp;
+            //Keep one decimal place
+            const weathterTemperatureInTransfer = app.currentWeatherTemperature.toFixed(1);
+            app.currentWeatherTemperature = weathterTemperatureInTransfer;
             app.currentWeatherWindSpeed = result.data[0].wind_spd;
             app.currentWeatherWindDirection = result.data[0].wind_cdir_full;
             //Wind direction use first letter upper case
@@ -130,10 +136,8 @@ app.getCurrentLocationWeather = () => {
 };
 
 app.temperatureUnitTransferMethod = () => { //Unit Transfer function
-    const weathterTemperatureInTransfer = app.currentWeatherTemperature.toFixed(1);
-    const weatherFeelsLikeTemperatureInTransfer = app.currentWeatherFeelsLike.toFixed(1);
-    $('.currentTempertureNumber').text(weathterTemperatureInTransfer);
-    $('.currentFeelsLikeTemperatureNumber').text(weatherFeelsLikeTemperatureInTransfer);
+    $('.currentTempertureNumber').text(app.currentWeatherTemperature);
+    $('.currentFeelsLikeTemperatureNumber').text(app.currentWeatherFeelsLike);
     $('.fahrenheitSign').addClass('.onusedSign');
     $('.centigradeSign').removeClass('.onusedSign');
     app.temperatureUnitIsCentigradeListner = !app.temperatureUnitIsCentigradeListner;
@@ -346,6 +350,9 @@ $(() => {
 
     $('.locationInputForm').on(`submit`, function (event) { //Input city name 
         event.preventDefault();
+        app.temperatureUnitIsCentigradeListner = true; //Centigrade default
+        $('.centigradeSign').attr('id', 'onUsedUnitSignButton'); //Default used 
+        $('.fahrenheitSign').removeAttr('id');//Default used 
         app.weatherCity = $('#cityNameInput').val();
         app.weatherCountry = $('#countryNameInput').val();
         //City name uses first letter upper case
@@ -367,7 +374,11 @@ $(() => {
             alert(`You already used Centigrade as unit!`)
         } else {
             app.currentWeatherTemperature = (app.currentWeatherTemperature - 32) / 1.8;
+            const weathterTemperatureInTransfer = app.currentWeatherTemperature.toFixed(1);
+            app.currentWeatherTemperature = weathterTemperatureInTransfer;
             app.currentWeatherFeelsLike = (app.currentWeatherFeelsLike - 32) / 1.8;
+            const weatherFeelsLikeTemperatureInTransfer = app.currentWeatherFeelsLike.toFixed(1);
+            app.currentWeatherFeelsLike = weatherFeelsLikeTemperatureInTransfer;
             $('.currentFeelsLikeTemperatureSign').text(`°C`);
             app.temperatureUnitTransferMethod();
             $('.fahrenheitSign').removeAttr('id');
@@ -381,7 +392,11 @@ $(() => {
             alert(`You already used Fahrenheit as unit!`)
         } else {
             app.currentWeatherTemperature = app.currentWeatherTemperature * 1.8 + 32;
+            const weathterTemperatureInTransfer = app.currentWeatherTemperature.toFixed(1);
+            app.currentWeatherTemperature = weathterTemperatureInTransfer;
             app.currentWeatherFeelsLike = app.currentWeatherFeelsLike * 1.8 + 32;
+            const weatherFeelsLikeTemperatureInTransfer = app.currentWeatherFeelsLike.toFixed(1);
+            app.currentWeatherFeelsLike = weatherFeelsLikeTemperatureInTransfer;
             $('.currentFeelsLikeTemperatureSign').text(`°F`);
             app.temperatureUnitTransferMethod();
             $('.centigradeSign').removeAttr('id');

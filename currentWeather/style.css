@@ -172,15 +172,13 @@ form input[type="submit"],
 }
 
 #onUsedUnitSignButton{
-    border-style: groove;
-    border-radius: 0;
     background-color:#EFE1CE;
     color:#282D3C;
 }
 
 .centigradeSign,
 .fahrenheitSign{
-    border: none;
+    border-radius: 0;
     background-color:rgba( 224,181,137, 0.9);
     color: #D3D3D3;
     font-family: 'Concert One', cursive;
@@ -216,7 +214,18 @@ form input[type="submit"],
 /* Weather data saving section settings start */
 .savingWeatherDataDisplay {
     display:flex;
+    flex-wrap: wrap;
     font-size: 20px;
+}
+
+.savingTemperatureDataDisplayDiv {
+    margin: 10px 5px;
+}
+
+.savingTemperatureDataDisplayDiv button {
+    border-radius: 0;
+    font-family: 'Concert One', cursive;
+    background-color:#EFE1CE;
 }
 /* Weather data saving section settings end */
 /* Main body settings end */
