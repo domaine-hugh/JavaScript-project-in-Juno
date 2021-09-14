@@ -214,18 +214,25 @@ form input[type="submit"],
 /* Weather data saving section settings start */
 .savingWeatherDataDisplay {
     display:flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     font-size: 20px;
 }
 
 .savingTemperatureDataDisplayDiv {
-    margin: 10px 5px;
+    margin: 10px 10px;
+    padding: 10px 10px;
 }
 
 .savingTemperatureDataDisplayDiv button {
     border-radius: 0;
     font-family: 'Concert One', cursive;
     background-color:#EFE1CE;
+}
+
+.importantData {
+    background-color: rgba(237, 138, 129, 0.9);
+    border:1px solid #282D3C;
 }
 /* Weather data saving section settings end */
 /* Main body settings end */

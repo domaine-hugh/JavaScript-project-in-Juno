@@ -151,7 +151,7 @@ app.savingtemperatureDataInCentigrade = () => { //Saving data when centigrade is
     <p>Pressure: ${app.currentWeatherPressue} mb.</p>
     <p>Humidity: ${app.currentWeathterHumidity}%.</p>
     <p>Wind: ${app.currentWeatherWindSpeed} m/s  ${app.currentWeatherWindDirection}</p>
-    <button>Mark this!</button>
+    <button class="importantButton">Mark this!</button>
 </div>
 `
     $('.savingWeatherDataDisplay').append(htmlcontent);
@@ -165,7 +165,7 @@ app.savingtemperatureDataInFahrenheit = () => { //Saving data when fahrenheit is
     <p>Pressure: ${app.currentWeatherPressue} mb.</p>
     <p>Humidity: ${app.currentWeathterHumidity}%.</p>
     <p>Wind: ${app.currentWeatherWindSpeed} m/s  ${app.currentWeatherWindDirection}</p>
-    <button>Mark this!</button>
+    <button class="importantButton">Mark this!</button>
 </div>
 `
     $('.savingWeatherDataDisplay').append(htmlcontent);
@@ -411,5 +411,9 @@ $(() => {
         } else {
             app.savingtemperatureDataInFahrenheit();
         }
+    });
+
+    $('.savingWeatherDataDisplay').on('click', '.importantButton', function() {
+        $(this).parent('div').toggleClass('importantData');
     });
 });
