@@ -235,4 +235,70 @@ form input[type="submit"],
     border:1px solid #282D3C;
 }
 /* Weather data saving section settings end */
+/* GIFs display section settings start */
+.gifSection {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.gifSection p {
+    align-self: center;
+}
+
+.gifDisplayDiv {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.gifBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.imgBox {
+    flex-direction: row;
+}
+
+.imgBox img{
+    width: 300px;
+    margin: 10px 50px;
+    align-self: center;
+}
+
+.gifTittle {
+    width: 300px;
+    margin: 10px 50px;
+}
+
+.gifTittle p {
+    text-align: center;
+}
+/* GIFs display section settings end */
 /* Main body settings end */
+/* Footer settings start */
+footer div {
+    border-top: 3px solid #282D3C;
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right:30px;
+}
+
+footer div a {
+    text-decoration-line: none;
+    color: #282D3C;
+}
+
+footer div a p::before {
+    content:'';
+    background-image: url(./image/junologo.jpg);
+    display: inline-block;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+/* Footer settings end */

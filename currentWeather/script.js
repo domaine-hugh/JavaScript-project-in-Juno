@@ -33,7 +33,9 @@ app.putGifOnPage = data => { //Adding Gifs on page
                     <div class="imgBox">
                         <img src="${gifObject.images.original.url} alt="${gifObject.title}"
                     </div>
-                    <p class="gifTittle">${gifObject.title}</p>
+                    <div class="gifTittle">
+                        <p>${gifObject.title}</p>
+                    </div>
                 </div>
            `
         $('.gifDisplayDiv').append(gifhtml);
@@ -80,7 +82,6 @@ app.getCurrentWeather = () => {
             country: app.weatherCountry
         }
     }).then(function (result) { //Saving weather data
-        console.log(result);
         if (result === undefined) {
             //If user input invalid city name, alert shows and let page go back to show the last city data
             alert(`Please enter a corret city name and a country abbreviation!`);
