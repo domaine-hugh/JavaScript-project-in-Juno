@@ -9,7 +9,6 @@ app.weatherCity = '';
 app.weatherCountry = '';
 app.currentWeaterCode = '';
 app.currentWeatherDescription = '';
-app.currentWeatherTime = '';
 app.currentWeatherDayNight = '';
 app.currentWeatherFeelsLike = '';
 app.currentWeatherTemperature = '';
@@ -92,7 +91,6 @@ app.getCurrentWeather = () => {
         } else {
             app.currentWeaterCode = result.data[0].weather.code;
             app.currentWeatherDescription = result.data[0].weather.description;
-            app.currentWeatherTime = result.data[0].datetime;
             app.currentWeatherDayNight = result.data[0].pod;
             app.currentWeatherFeelsLike = result.data[0].app_temp;
             app.currentWeatherTemperature = result.data[0].temp;
@@ -136,8 +134,8 @@ app.temperatureUnitTransferMethod = () => { //Unit Transfer function
     const weatherFeelsLikeTemperatureInTransfer = app.currentWeatherFeelsLike.toFixed(1);
     $('.currentTempertureNumber').text(weathterTemperatureInTransfer);
     $('.currentFeelsLikeTemperatureNumber').text(weatherFeelsLikeTemperatureInTransfer);
-    $('#fahrenheitSign').addClass('.onusedSign');
-    $('#centigradeSign').removeClass('.onusedSign');
+    $('.fahrenheitSign').addClass('.onusedSign');
+    $('.centigradeSign').removeClass('.onusedSign');
     app.temperatureUnitIsCentigradeListner = !app.temperatureUnitIsCentigradeListner;
 };
 
@@ -194,17 +192,14 @@ app.currentTimeTittleBackground = () => {
 };
 
 app.weatherIconAndDescriptionDisplay = () => {
-    console.log(`123`);
     if (app.currentWeaterCode === 200 || app.currentWeaterCode === 201 || app.currentWeaterCode === 202) {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/200d.png" alt = "thunder rain logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/200n.png" alt = "thunder rain logo nighttime"> 
             `);
         };
@@ -212,43 +207,36 @@ app.weatherIconAndDescriptionDisplay = () => {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/230d.png" alt = "thunder drizzle logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/230n.png" alt = "thunder drizzle logo nighttime"> 
             `);
         };
     } else if (app.currentWeaterCode === 300 || app.currentWeaterCode === 301 || app.currentWeaterCode === 302) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/300.png" alt = "drizzle logo"> 
         `);
     } else if (app.currentWeaterCode === 500 || app.currentWeaterCode === 501 || app.currentWeaterCode === 511) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/500.png" alt = "light Rain logo"> 
         `);
     } else if (app.currentWeaterCode === 502) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/502.png" alt = "heavy Rain logo"> 
         `);
     } else if (app.currentWeaterCode === 520 || app.currentWeaterCode === 522) {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/520d.png" alt = "shower rain logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/520n.png" alt = "shower rain logo nighttime"> 
         `);
         };
@@ -256,12 +244,10 @@ app.weatherIconAndDescriptionDisplay = () => {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/521d.png" alt = "shower rain logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/521n.png" alt = "shower rain logo nighttime"> 
         `);
         };
@@ -269,43 +255,36 @@ app.weatherIconAndDescriptionDisplay = () => {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/600d.png" alt = "light snow logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/600n.png" alt = "light snow logo nighttime"> 
         `);
         };
     } else if (app.currentWeaterCode === 601 || app.currentWeaterCode === 602 || app.currentWeaterCode === 622) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/601.png" alt = "heavy Snow logo"> 
         `);
     } else if (app.currentWeaterCode === 611 || app.currentWeaterCode === 612) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/611.png" alt = "sleet logo"> 
         `);
     } else if (app.currentWeaterCode === 623) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/623.png" alt = "flurries logo"> 
         `);
     } else if (app.currentWeaterCode === 700 || app.currentWeaterCode === 711 || app.currentWeaterCode === 721 || app.currentWeaterCode === 731 || app.currentWeaterCode === 741 || app.currentWeaterCode === 751) {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/700d.png" alt = "mist logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/700n.png" alt = "mist logo nighttime"> 
         `);
         };
@@ -313,12 +292,10 @@ app.weatherIconAndDescriptionDisplay = () => {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/800d.png" alt = "clear sky logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/800n.png" alt = "clear sky logo nighttime"> 
         `);
         };
@@ -326,12 +303,10 @@ app.weatherIconAndDescriptionDisplay = () => {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/801d.png" alt = "few clouds logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/801n.png" alt = "few clouds logo nighttime"> 
         `);
         };
@@ -339,33 +314,31 @@ app.weatherIconAndDescriptionDisplay = () => {
         $('#weatherIconDiv').empty();
         if (app.currentWeatherDayNight === 'd') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/803d.png" alt = "broken clouds logo daytime"> 
             `);
         } else if (app.currentWeatherDayNight === 'n') {
             $('#weatherIconDiv').append(`
-                <p>${app.currentWeatherDescription}</p>
                 <img src="./image/803n.png" alt = "broken clouds logo nighttime"> 
         `);
         };
     } else if (app.currentWeaterCode === 804) {
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/804.png" alt = "overcast clouds logo"> 
             `);
     } else { //code = 900
         $('#weatherIconDiv').empty();
         $('#weatherIconDiv').append(`
-            <p>${app.currentWeatherDescription}</p>
             <img src="./image/900.png" alt = "overcast clouds logo"> 
             `);
     };
+    $('.currentWeatherDescriptionDisplay').empty();
+    $('.currentWeatherDescriptionDisplay').append(app.currentWeatherDescription);
 };
 
 app.init = () => {
     app.getCurrentLocationWeather();
-
+    $('.centigradeSign').attr('id', 'onUsedUnitSignButton'); //Default used Centigrade
 };
 
 $(() => {
@@ -388,27 +361,31 @@ $(() => {
         app.weatherIconAndDescriptionDisplay(); // Display weather icon
     });
 
-    $('#centigradeSign').click(function (event) { //Transfer to Centigrade
+    $('.centigradeSign').click(function (event) { //Transfer to Centigrade
         event.preventDefault();
         if (app.temperatureUnitIsCentigradeListner === true) {
-            alert(`You already use Centigrade as unit!`)
+            alert(`You already used Centigrade as unit!`)
         } else {
             app.currentWeatherTemperature = (app.currentWeatherTemperature - 32) / 1.8;
             app.currentWeatherFeelsLike = (app.currentWeatherFeelsLike - 32) / 1.8;
             $('.currentFeelsLikeTemperatureSign').text(`°C`);
             app.temperatureUnitTransferMethod();
+            $('.fahrenheitSign').removeAttr('id');
+            $('.centigradeSign').attr('id', 'onUsedUnitSignButton');
         }
     });
 
-    $('#fahrenheitSign').click(function (event) { //Transfer to Fahrenheit
+    $('.fahrenheitSign').click(function (event) { //Transfer to Fahrenheit
         event.preventDefault();
         if (app.temperatureUnitIsCentigradeListner === false) {
-            alert(`You already use Fahrenheit as unit!`)
+            alert(`You already used Fahrenheit as unit!`)
         } else {
             app.currentWeatherTemperature = app.currentWeatherTemperature * 1.8 + 32;
             app.currentWeatherFeelsLike = app.currentWeatherFeelsLike * 1.8 + 32;
             $('.currentFeelsLikeTemperatureSign').text(`°F`);
             app.temperatureUnitTransferMethod();
+            $('.centigradeSign').removeAttr('id');
+            $('.fahrenheitSign').attr('id', 'onUsedUnitSignButton');
         }
     });
 

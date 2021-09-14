@@ -138,6 +138,85 @@ form input[type="submit"],
     font-family: 'Concert One', cursive;
     background-color:#EFE1CE;
 }
+/* Location input section settings end */
+/* Weather display section settings start */
+.weatherDataDisplaySection {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    font-size: 20px;
+}
 
+.temperatureNumberDisplayDiv {
+    display: flex;
+    margin:0 50px;
+}
 
+.temperatureNumberDisplayDivFlexbox {
+    display: flex;
+    align-items: center;
+    margin-right:50px;
+}
+
+.currentTempertureNumber,
+.temperatureSignSwitch p,
+.currentWeatherDescriptionDisplay {
+    font-size: 30px;
+}
+
+.temperatureSignSwitch {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#onUsedUnitSignButton{
+    border-style: groove;
+    border-radius: 0;
+    background-color:#EFE1CE;
+    color:#282D3C;
+}
+
+.centigradeSign,
+.fahrenheitSign{
+    border: none;
+    background-color:rgba( 224,181,137, 0.9);
+    color: #D3D3D3;
+    font-family: 'Concert One', cursive;
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.weatherInformation {
+    display: flex;
+}
+
+.temperatureSignSwitch {
+    display:flex;
+}
+
+.otherNumberDisplayDiv {
+    margin-right:50px;
+}
+
+.savingWeatherDataButtonFlexbox {
+    display:flex;
+    flex-direction: column-reverse;
+}
+
+.savingWeatherDataButton {
+    border-radius: 0;
+    background-color:#EFE1CE;
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+/* Weather display section settings end */
+/* Weather data saving section settings start */
+.savingWeatherDataDisplay {
+    display:flex;
+    font-size: 20px;
+}
+/* Weather data saving section settings end */
 /* Main body settings end */

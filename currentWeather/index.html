@@ -42,19 +42,22 @@
         <sectiom class="weatherDataDisplaySection">
             <div class="weatherInformation">
                 <div id="weatherIconDiv">
-                    <!-- <p>${app.currentWeatherDescription}</p>
+                    <!-- <p>currentWeatherDescription</p>
                     <img src="./image/XXX.png" alt = "XXX logo XXX">  -->
                 </div>
                 <div class="temperatureNumberDisplayDiv">
-                    <div>
+                    <div class="temperatureNumberDisplayDivFlexbox">
                         <div>
                             <p class="currentTempertureNumber"></p>
                         </div>
-                        <div>
-                            <button id="centigradeSign">°C</button><p>|</p><button id="fahrenheitSign">°F</button>
+                        <div class="temperatureSignSwitch">
+                            <button class="centigradeSign">°C</button><p>|</p><button class="fahrenheitSign">°F</button>
                         </div>
                     </div>
-                    <p>Feels like <span class="currentFeelsLikeTemperatureNumber"></span><span class="currentFeelsLikeTemperatureSign">°C</span></p>
+                    <div>
+                        <p class="currentWeatherDescriptionDisplay"></p>
+                        <p>Feels like <span class="currentFeelsLikeTemperatureNumber"></span><span class="currentFeelsLikeTemperatureSign">°C</span></p>
+                    </div>
                 </div>
                 <div class="otherNumberDisplayDiv">
                     <p>Humidity: <span class="humidityDisplay"></span></p>
@@ -62,14 +65,11 @@
                     <p>Wind: <span class="windDisplay"></span></p>
                 </div>
             </div>
-            <div class="cityInformation">
-                <p class="currentCityName"></p>
-                <p class="currentTimeDisplay"></p>
-                <p class="currentWeatherDescriptionDisplay"></p>
+            <div class="savingWeatherDataButtonFlexbox">
+                <button class="savingWeatherDataButton">Save This Data</button>
             </div>
-            <div>
-                <button class="savingWeatherDataButton">Save the weather data</button>
-            </div>
+        </sectiom>
+        <section>
             <div class="savingWeatherDataDisplay">
 
             </div>
