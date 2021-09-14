@@ -26,6 +26,23 @@ app.lastOneCountryName = "";
 app.gifKey = `qqanPZz7sLSn7kVSm7oDDrm4Az3ZQ1XH`;
 app.gifBaseUrl = `http://api.giphy.com/v1/gifs/search`;
 
+app.countryAbbreviationCode = `
+ There are some abbreviated code of areas:
+ 
+ Canada : CA
+ United States : US
+ China : CN
+ India : IN
+ United Kingdom : UK
+ France : FR
+ Italy : IT
+ Germany : DE
+ Japan : JP
+ South Korea : KR
+
+ Please click "CANCEL" if you cannot find the abbreviated code you are looking for, and this button will switch to another then provide you an external link for abbreviated code search.
+`;
+
 app.putGifOnPage = data => { //Adding Gifs on page
     data.forEach(function (gifObject) {
         const gifhtml = `
@@ -417,4 +434,15 @@ $(() => {
     $('.savingWeatherDataDisplay').on('click', '.importantButton', function() {
         $(this).parent('div').toggleClass('importantData');
     });
+
+    $('.commonAbbrCode').click(function(event) {
+        event.preventDefault();
+        let confirmReturnValue = confirm(app.countryAbbreviationCode);
+        if(confirmReturnValue == false) {
+            $('.commonAbbrCode').html(`
+                <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes"><p>Whole List of Country Abbreviation Code</p></a>
+            `);
+            $('.commonAbbrCode').unbind('click');
+        }
+    }); 
 });

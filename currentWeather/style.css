@@ -138,6 +138,15 @@ form input[type="submit"],
     font-family: 'Concert One', cursive;
     background-color:#EFE1CE;
 }
+
+.formWrap button a {
+    text-decoration-line: none;
+}
+
+.formWrap button p {
+    margin: 0;
+    color: #282D3C;
+}
 /* Location input section settings end */
 /* Weather display section settings start */
 .weatherDataDisplaySection {
@@ -245,6 +254,7 @@ form input[type="submit"],
 
 .gifSection p {
     align-self: center;
+    font-size: 30px;
 }
 
 .gifDisplayDiv {
