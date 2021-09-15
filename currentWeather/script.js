@@ -45,10 +45,18 @@ app.countryAbbreviationCode = `
 
 app.applicationGuideContent = `
     Thanks to use Yuhui's weather network!
-    The application could automatically display the weather in your city, also you can input a city and and its country abbreviation code to check somewhere all over the world!
-    The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click "CANCEL" and the button will change its function then proving an external link for more area abbreviation code checkings.
-    The temperatues on page can be exhibited by Centigrade or Fahrenheit. You can select one of them by clicking corresponding unit button.
 
+    WEATHER DISPLAY: The application could automatically display the weather in your city, also you can input a city and and its country abbreviation code to check somewhere all over the world!
+
+    COUNTRY ABBREVIATION CODE: The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click "CANCEL" and the button will change its function then proving an external link for more area abbreviation code checkings.
+
+    UNITS SWITCH: The temperatues on page can be exhibited by Centigrade or Fahrenheit. You can select one of them by clicking corresponding unit button.
+
+    SAVING WEATHER DATA: The application can save the current weather data and display below. In addition, you can highlight the block which you want to use for comparison.
+
+    GIF FOR FUN: There are some Gifs which are searched based on the weather desciption as keywords. Please feel free to right click and save them :).
+
+    CONTACT ME: Please do not be hesitant to contact me if you meet any issue during application use or have feedback and suggestion to share with me. On the right top corner, there are my Tweeter and Github and Linkedin link.
 
 `;
 
@@ -442,6 +450,7 @@ $(() => {
 
     $('.savingWeatherDataDisplay').on('click', '.importantButton', function() {
         $(this).parent('div').toggleClass('importantData');
+        $(this).toggleClass('importantButtonFlag');
     });
 
     $('.commonAbbrCode').click(function(event) {

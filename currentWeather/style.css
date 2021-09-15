@@ -280,6 +280,15 @@ form input[type="submit"],
     background-color: rgba(237, 138, 129, 0.9);
     border:1px solid #282D3C;
 }
+.importantButtonFlag::before {
+    content:'';
+    background-image: url(./image/importantEvent.png);
+    display: inline-block;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
 /* Weather data saving section settings end */
 /* GIFs display section settings start */
 .gifSection {
