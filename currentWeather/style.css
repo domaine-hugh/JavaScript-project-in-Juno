@@ -30,8 +30,24 @@ body {
 
 /* Page body settings end */
 /* Header settings start */
-.subscriptMe {
+.headerTopDiv {
+    display:flex;
+    justify-content: space-between;
     background-color:#EFE1CE;
+}
+
+.headerTopDiv button {
+    align-self: center;
+    margin-left:10px;
+    border-radius: 0;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Concert One', cursive;
+    background-color:rgb( 224,181,137);
+}
+
+.subscriptMe {
     padding:10px;
     display:flex;
     justify-content: end;
@@ -146,6 +162,27 @@ form input[type="submit"],
 .formWrap button p {
     margin: 0;
     color: #282D3C;
+}
+
+.externalLink {
+    display : none;
+    align-self: center;
+    border-radius: 0;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Concert One', cursive;
+    background-color:#EFE1CE;
+    text-decoration-line: none;
+    color: #282D3C;
+    padding:0 5px;
+    border-style: outset;
+    border-width: 1px;
+    border-color: aliceblue;
+}
+
+.externalLink p {
+    margin-top: 3px;
 }
 /* Location input section settings end */
 /* Weather display section settings start */
@@ -312,3 +349,8 @@ footer div a p::before {
     margin-right: 5px;
 }
 /* Footer settings end */
+
+
+.externalLink {
+    display : none;
+}

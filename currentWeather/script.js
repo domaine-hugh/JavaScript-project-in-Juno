@@ -28,7 +28,7 @@ app.gifBaseUrl = `http://api.giphy.com/v1/gifs/search`;
 
 app.countryAbbreviationCode = `
  There are some abbreviated code of areas:
- 
+
  Canada : CA
  United States : US
  China : CN
@@ -40,7 +40,16 @@ app.countryAbbreviationCode = `
  Japan : JP
  South Korea : KR
 
- Please click "CANCEL" if you cannot find the abbreviated code you are looking for, and this button will switch to another then provide you an external link for abbreviated code search.
+ Please click "CANCEL" if you cannot find the abbreviated code you are looking for, and this button will switch to another then providing you an external link for abbreviated code search.
+`;
+
+app.applicationGuideContent = `
+    Thanks to use Yuhui's weather network!
+    The application could automatically display the weather in your city, also you can input a city and and its country abbreviation code to check somewhere all over the world!
+    The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click "CANCEL" and the button will change its function then proving an external link for more area abbreviation code checkings.
+    The temperatues on page can be exhibited by Centigrade or Fahrenheit. You can select one of them by clicking corresponding unit button.
+
+
 `;
 
 app.putGifOnPage = data => { //Adding Gifs on page
@@ -169,7 +178,7 @@ app.savingtemperatureDataInCentigrade = () => { //Saving data when centigrade is
     <p>Pressure: ${app.currentWeatherPressue} mb.</p>
     <p>Humidity: ${app.currentWeathterHumidity}%.</p>
     <p>Wind: ${app.currentWeatherWindSpeed} m/s  ${app.currentWeatherWindDirection}</p>
-    <button class="importantButton">Mark this!</button>
+    <button class="importantButton">Highlight This!</button>
 </div>
 `
     $('.savingWeatherDataDisplay').append(htmlcontent);
@@ -183,7 +192,7 @@ app.savingtemperatureDataInFahrenheit = () => { //Saving data when fahrenheit is
     <p>Pressure: ${app.currentWeatherPressue} mb.</p>
     <p>Humidity: ${app.currentWeathterHumidity}%.</p>
     <p>Wind: ${app.currentWeatherWindSpeed} m/s  ${app.currentWeatherWindDirection}</p>
-    <button class="importantButton">Mark this!</button>
+    <button class="importantButton">Highlight This!</button>
 </div>
 `
     $('.savingWeatherDataDisplay').append(htmlcontent);
@@ -439,10 +448,13 @@ $(() => {
         event.preventDefault();
         let confirmReturnValue = confirm(app.countryAbbreviationCode);
         if(confirmReturnValue == false) {
-            $('.commonAbbrCode').html(`
-                <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes"><p>Whole List of Country Abbreviation Code</p></a>
-            `);
-            $('.commonAbbrCode').unbind('click');
+           $('.commonAbbrCode').off('click').hide();
+           $('.externalLink').show();  
         }
-    }); 
+    });
+
+    $('.headerTopDiv button').click(function(event) {
+        event.preventDefault();
+        alert(app.applicationGuideContent);
+    });
 });
