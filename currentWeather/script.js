@@ -43,22 +43,14 @@ app.countryAbbreviationCode = `
  Please click "CANCEL" if you cannot find the abbreviated code you are looking for, and this button will switch to another then providing you an external link for abbreviated code search.
 `;
 
-app.applicationGuideContent = `
-    Thanks to use Yuhui's weather network!
-
-    WEATHER DISPLAY: The application could automatically display the weather in your city, also you can input a city and and its country abbreviation code to check somewhere all over the world!
-
-    COUNTRY ABBREVIATION CODE: The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click "CANCEL" and the button will change its function then proving an external link for more area abbreviation code checkings.
-
-    UNITS SWITCH: The temperatues on page can be exhibited by Centigrade or Fahrenheit. You can select one of them by clicking corresponding unit button.
-
-    SAVING WEATHER DATA: The application can save the current weather data and display below. In addition, you can highlight the block which you want to use for comparison.
-
-    GIF FOR FUN: There are some Gifs which are searched based on the weather desciption as keywords. Please feel free to right click and save them :).
-
-    CONTACT ME: Please do not be hesitant to contact me if you meet any issue during application use or have feedback and suggestion to share with me. On the right top corner, there are my Tweeter and Github and Linkedin link.
-
-`;
+app.applicationGuideContent =
+`Thanks to use Yuhui's weather network!</br>
+<strong>WEATHER DISPLAY: </strong>The application could automatically display the weather in your city, also you can input a city and and its country abbreviation code to check somewhere all over the world! </br>
+<strong>COUNTRY ABBREVIATION CODE: </strong>The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click <strong>"CANCEL"</strong> and the button will change its function then proving an external link for more area abbreviation code checkings.</br>
+<strong>UNITS SWITCH: </strong>The temperatues on page can be exhibited by Centigrade or Fahrenheit. You can select one of them by clicking corresponding unit button.</br>
+<strong>SAVING WEATHER DATA: </strong>The application can save the current weather data and display below. In addition, you can highlight the block which you want to use for comparison.</br>
+<strong>GIF FOR FUN: </strong>There are some Gifs which are searched based on the weather desciption as keywords. Please feel free to right click and save them :).</br>
+<strong>CONTACT ME: </strong>Please do not be hesitant to contact me if you meet any issue during application use or have feedback and suggestion to share with me. On the right top corner, there are my Tweeter and Github and Linkedin link.</br>`; 
 
 app.putGifOnPage = data => { //Adding Gifs on page
     data.forEach(function (gifObject) {
@@ -118,7 +110,7 @@ app.getCurrentWeather = () => {
     }).then(function (result) { //Saving weather data
         if (result === undefined) {
             //If user input invalid city name, alert shows and let page go back to show the last city data
-            alert(`Please enter a corret city name and a country abbreviation!`);
+            prompt(`Please enter a <strong>corret</strong> city name and its country abbreviation!`);
             app.weatherCity = app.lastOneCityName;
             app.weatherCountry = app.lastOneCountryName;
             app.locationDataDisplay(app.weatherCity, app.weatherCountry);
@@ -375,6 +367,73 @@ app.weatherIconAndDescriptionDisplay = () => {
     $('.currentWeatherDescriptionDisplay').append(app.currentWeatherDescription);
 };
 
+//Building a custom alert box -- used in application guide
+ window.alert = alert;
+ app.alertSituation = 0;
+ function alert(e) {
+     if (app.alertSituation === 0) {
+     $('body').append(`
+        <div id="newAlertBox">
+            <div id="newAlertBoxTittle">Application Guide ( ･ω･ )ﾉ<span class="boxPromptCloseButton">x</span></div>
+            <div id="newAlerBoxMessege">`+e+`</div>
+            <button id="newAlerBoxCloseButton" class="boxCloseButton">I Got It!</button>
+        </div>
+     `);
+    app.alertSituation = 1;
+    };
+     $('.boxCloseButton').click(function(){
+        $('#newAlertBox').remove();
+        app.alertSituation = 0;
+     });
+ };
+
+ //Building a custom alert box -- used in unit switch and invalid input
+ window.prompt = prompt;
+ app.promptSituation = 0;
+ function prompt(e) {
+     if (app.promptSituation === 0) {
+     $('body').append(`
+        <div id="newPromptBox">
+            <div id="newPromptBoxTittle">Oops (ﾟoﾟ〃)<span class="boxPromptCloseButton">x</span></div>
+            <div id="newPromptBoxMessege">`+e+`</div>
+            <button id="newPromptBoxCloseButton" class="boxPromptCloseButton">Thanks!</button>
+        </div>
+     `);
+     app.promptSituation = 1;
+     };
+     $('.boxPromptCloseButton').click(function(){
+        $('#newPromptBox').remove();
+        app.promptSituation = 0;
+     });
+ };
+
+ //Building a custom comfirm box -- used in country abbr code check
+ window.confirm = confirm;
+ app.confirmSituation = 0;
+ function confirm(e) {
+     if (app.confirmSituation === 0){
+     $('body').append(`
+        <div id="newConfirmBox">
+            <div id="newConfirmBoxTittle">(╭☞•́•̀)╭☞ Please find your code below: <span class="boxConfirmCloseButton">x</span></div>
+            <div id="newConfirmBoxMessege">`+e+`</div>
+            <div id="newConfirmBoxButtonDiv>
+            <button id="newConfirmBoxCloseButton" class="boxConfirmCloseButton">I Found My Code!</button>
+            <button id="newConfirmBoxMoreInfoButton" value="false">More Area Code</button>
+            </div>
+        </div>
+     `);
+     app.confirmSituation = 1;
+     };
+     $('.boxConfirmCloseButton').click(function(){
+        $('#newConfirmBox').remove();
+        app.confirmSituation = 0;
+     });
+     $('#newConfirmBoxMoreInfoButton').click(function(){
+        $('#newConfirmBox').remove();
+        $('.commonAbbrCode').off('click').hide();
+        $('.externalLink').show();  
+     });
+ };
 app.init = () => {
     app.getCurrentLocationWeather();
     $('.centigradeSign').attr('id', 'onUsedUnitSignButton'); //Default used Centigrade
@@ -406,7 +465,7 @@ $(() => {
     $('.centigradeSign').click(function (event) { //Transfer to Centigrade
         event.preventDefault();
         if (app.temperatureUnitIsCentigradeListner === true) {
-            alert(`You already used Centigrade as unit!`)
+            prompt(`You already used <strong>Centigrade</strong> as unit!`)
         } else {
             app.currentWeatherTemperature = (app.currentWeatherTemperature - 32) / 1.8;
             const weathterTemperatureInTransfer = app.currentWeatherTemperature.toFixed(1);
@@ -424,7 +483,7 @@ $(() => {
     $('.fahrenheitSign').click(function (event) { //Transfer to Fahrenheit
         event.preventDefault();
         if (app.temperatureUnitIsCentigradeListner === false) {
-            alert(`You already used Fahrenheit as unit!`)
+            prompt(`You already used <strong>Fahrenheit</strong> as unit!`)
         } else {
             app.currentWeatherTemperature = app.currentWeatherTemperature * 1.8 + 32;
             const weathterTemperatureInTransfer = app.currentWeatherTemperature.toFixed(1);
@@ -455,11 +514,7 @@ $(() => {
 
     $('.commonAbbrCode').click(function(event) {
         event.preventDefault();
-        let confirmReturnValue = confirm(app.countryAbbreviationCode);
-        if(confirmReturnValue == false) {
-           $('.commonAbbrCode').off('click').hide();
-           $('.externalLink').show();  
-        }
+        confirm(app.countryAbbreviationCode);
     });
 
     $('.headerTopDiv button').click(function(event) {

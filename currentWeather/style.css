@@ -358,8 +358,123 @@ footer div a p::before {
     margin-right: 5px;
 }
 /* Footer settings end */
-
-
-.externalLink {
-    display : none;
+/* Alert box start */
+#newAlertBox {
+    width: 500px;
+    position:fixed;
+    z-index: 999;
+    top: 15%;
+    left:37%;
+    background-color:#EFE1CE;
+    box-shadow: 6px 6px 10px #282D3C;
+    display: inline-block;
+    border: 3px outset rgb( 224,181,137);
+    font-size: 20px;
 }
+
+#newAlertBoxTittle {
+    background-image: linear-gradient( to top right, rgb( 224,181,137), #EFE1CE);
+    height: 40px;
+    padding: 0 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#newAlertBoxTittle span {
+    cursor:pointer;
+}
+
+#newAlerBoxMessege {
+    padding:5px;
+}
+#newAlerBoxCloseButton {
+    border-radius: 0;
+    background-color: rgb( 224,181,137);
+    color: #282D3C;
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    margin: 10px 20px;
+    float: inline-end;
+}
+/* Alert box end */
+/*Prompt box start */
+#newPromptBox {
+    width: 500px;
+    position:fixed;
+    z-index: 999;
+    top: 40%;
+    left:37%;
+    background-color:#EFE1CE;
+    box-shadow: 6px 6px 10px #282D3C;
+    display: inline-block;
+    border: 3px outset rgb( 224,181,137);
+    font-size: 20px;
+}
+
+#newPromptBoxTittle {
+    background-image: linear-gradient( to top left, rgb( 224,181,137), #EFE1CE);
+    height: 40px;
+    padding: 0 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#newPromptBoxTittle span {
+    cursor:pointer;
+}
+
+#newPromptBoxMessege {
+    padding:50px;
+}
+#newPromptBoxCloseButton {
+    border-radius: 0;
+    background-color: rgb( 224,181,137);
+    color: #282D3C;
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    margin: 10px 20px;
+    float: inline-end;
+}
+/* Prompt box end */
+/*Confirm box start */
+#newConfirmBox {
+    width: 500px;
+    position:fixed;
+    z-index: 999;
+    top: 40%;
+    left:37%;
+    background-color:#EFE1CE;
+    box-shadow: 6px 6px 10px #282D3C;
+    display: inline-block;
+    border: 3px outset rgb( 224,181,137);
+    font-size: 20px;
+}
+
+#newConfirmBoxTittle {
+    background-image: linear-gradient( to top left, rgb( 224,181,137), #EFE1CE);
+    height: 40px;
+    padding: 0 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#newConfirmBoxTittle span {
+    cursor:pointer;
+}
+
+#newConfirmBoxMessege {
+    padding:50px;
+}
+#newConfirmBoxCloseButton {
+    border-radius: 0;
+    background-color: rgb( 224,181,137);
+    color: #282D3C;
+    font-family: 'Concert One', cursive;
+    font-size: 20px;
+    margin: 10px 20px;
+    float: inline-end;
+}
+/* Confirm box end */
