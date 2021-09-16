@@ -27,26 +27,27 @@ app.gifKey = `qqanPZz7sLSn7kVSm7oDDrm4Az3ZQ1XH`;
 app.gifBaseUrl = `http://api.giphy.com/v1/gifs/search`;
 
 app.countryAbbreviationCode = `
- There are some abbreviated code of areas:
-
- Canada : CA
- United States : US
- China : CN
- India : IN
- United Kingdom : UK
- France : FR
- Italy : IT
- Germany : DE
- Japan : JP
- South Korea : KR
-
- Please click "CANCEL" if you cannot find the abbreviated code you are looking for, and this button will switch to another then providing you an external link for abbreviated code search.
+ There are some abbreviated code of areas:</br>
+ </br>
+ Canada : CA</br>
+ United States : US</br>
+ China : CN</br>
+ India : IN</br>
+ United Kingdom : UK</br>
+ France : FR</br>
+ Italy : IT</br>
+ Germany : DE</br>
+ Japan : JP</br>
+ South Korea : KR</br>
+ </br>
+ Please click <strong>"More Area Code"</strong> if you cannot find the abbreviated code you are looking for, and this button will switch to another then providing you an external link for abbreviated code search.
 `;
 
 app.applicationGuideContent =
 `Thanks to use Yuhui's weather network!</br>
+</br>
 <strong>WEATHER DISPLAY: </strong>The application could automatically display the weather in your city, also you can input a city and and its country abbreviation code to check somewhere all over the world! </br>
-<strong>COUNTRY ABBREVIATION CODE: </strong>The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click <strong>"CANCEL"</strong> and the button will change its function then proving an external link for more area abbreviation code checkings.</br>
+<strong>COUNTRY ABBREVIATION CODE: </strong>The button of area abbreviation code may help you during your inputting. To be more specific, it will display some codes for areas; if the code you are looking for is not in the pop-up window, please click <strong>"More Area Code"</strong> and the button will change its function then proving an external link for more area abbreviation code checkings.</br>
 <strong>UNITS SWITCH: </strong>The temperatues on page can be exhibited by Centigrade or Fahrenheit. You can select one of them by clicking corresponding unit button.</br>
 <strong>SAVING WEATHER DATA: </strong>The application can save the current weather data and display below. In addition, you can highlight the block which you want to use for comparison.</br>
 <strong>GIF FOR FUN: </strong>There are some Gifs which are searched based on the weather desciption as keywords. Please feel free to right click and save them :).</br>
@@ -374,7 +375,7 @@ app.weatherIconAndDescriptionDisplay = () => {
      if (app.alertSituation === 0) {
      $('body').append(`
         <div id="newAlertBox">
-            <div id="newAlertBoxTittle">Application Guide ( ･ω･ )ﾉ<span class="boxPromptCloseButton">x</span></div>
+            <div id="newAlertBoxTittle">Application Guide ( ･ω･ )ﾉ<span class="boxCloseButton">x</span></div>
             <div id="newAlerBoxMessege">`+e+`</div>
             <button id="newAlerBoxCloseButton" class="boxCloseButton">I Got It!</button>
         </div>
@@ -416,9 +417,9 @@ app.weatherIconAndDescriptionDisplay = () => {
         <div id="newConfirmBox">
             <div id="newConfirmBoxTittle">(╭☞•́•̀)╭☞ Please find your code below: <span class="boxConfirmCloseButton">x</span></div>
             <div id="newConfirmBoxMessege">`+e+`</div>
-            <div id="newConfirmBoxButtonDiv>
-            <button id="newConfirmBoxCloseButton" class="boxConfirmCloseButton">I Found My Code!</button>
-            <button id="newConfirmBoxMoreInfoButton" value="false">More Area Code</button>
+            <div id="newConfirmBoxButtonDiv">
+                <button id="newConfirmBoxCloseButton" class="boxConfirmCloseButton">I Found My Code!</button>
+                <button id="newConfirmBoxMoreInfoButton" value="false">More Area Code</button>
             </div>
         </div>
      `);

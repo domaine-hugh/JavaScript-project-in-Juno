@@ -381,14 +381,18 @@ footer div a p::before {
     align-items: center;
 }
 
-#newAlertBoxTittle span {
+#newAlertBoxTittle span,
+#newPromptBoxTittle span,
+#newConfirmBoxTittle span {
     cursor:pointer;
 }
 
 #newAlerBoxMessege {
     padding:5px;
 }
-#newAlerBoxCloseButton {
+#newAlerBoxCloseButton,
+#newPromptBoxCloseButton,
+#newConfirmBoxButtonDiv button {
     border-radius: 0;
     background-color: rgb( 224,181,137);
     color: #282D3C;
@@ -421,12 +425,8 @@ footer div a p::before {
     align-items: center;
 }
 
-#newPromptBoxTittle span {
-    cursor:pointer;
-}
-
 #newPromptBoxMessege {
-    padding:50px;
+    padding:20px 50px;
 }
 #newPromptBoxCloseButton {
     border-radius: 0;
@@ -434,7 +434,7 @@ footer div a p::before {
     color: #282D3C;
     font-family: 'Concert One', cursive;
     font-size: 20px;
-    margin: 10px 20px;
+    margin: 10px 10px;
     float: inline-end;
 }
 /* Prompt box end */
@@ -443,7 +443,7 @@ footer div a p::before {
     width: 500px;
     position:fixed;
     z-index: 999;
-    top: 40%;
+    top: 20%;
     left:37%;
     background-color:#EFE1CE;
     box-shadow: 6px 6px 10px #282D3C;
@@ -453,7 +453,7 @@ footer div a p::before {
 }
 
 #newConfirmBoxTittle {
-    background-image: linear-gradient( to top left, rgb( 224,181,137), #EFE1CE);
+    background-image: linear-gradient( to top, rgb( 224,181,137), #EFE1CE);
     height: 40px;
     padding: 0 20px;
     display:flex;
@@ -461,20 +461,18 @@ footer div a p::before {
     align-items: center;
 }
 
-#newConfirmBoxTittle span {
-    cursor:pointer;
+#newConfirmBoxMessege {
+    margin: 10px 20px;
 }
 
-#newConfirmBoxMessege {
-    padding:50px;
+#newConfirmBoxButtonDiv {
+    margin:0 50px;
+    display:flex;
+    justify-content: space-between;
+
 }
-#newConfirmBoxCloseButton {
-    border-radius: 0;
-    background-color: rgb( 224,181,137);
-    color: #282D3C;
-    font-family: 'Concert One', cursive;
-    font-size: 20px;
-    margin: 10px 20px;
-    float: inline-end;
+
+#newConfirmBoxButtonDiv button  {
+    margin: 10px 10px;
 }
 /* Confirm box end */
