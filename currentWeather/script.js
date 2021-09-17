@@ -452,7 +452,7 @@ $(() => {
         app.weatherCountry = $('#countryNameInput').val();
         //City name uses first letter upper case
         const currentWeatherCityFirstLetterUpperCase = app.weatherCity;
-        app.weatherCity = currentWeatherCityFirstLetterUpperCase[0].toUpperCase() + currentWeatherCityFirstLetterUpperCase.substr(1);
+        app.weatherCity = currentWeatherCityFirstLetterUpperCase[0].toUpperCase() + currentWeatherCityFirstLetterUpperCase.substr(1).toLowerCase();
         //Country abbr uses upper case
         const currentWeatherCountryUpperCase = app.weatherCountry;
         app.weatherCountry = currentWeatherCountryUpperCase.toUpperCase();
