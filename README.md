@@ -1,4 +1,4 @@
-# JavaScript_projectInJuno:octocat:    
+# JavaScript_projectInJuno :octocat:    
   
 This project is re uploaded on Sep 12, 2021 because my misusing git and my repository did not work properly. 
    
